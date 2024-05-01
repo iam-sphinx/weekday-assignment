@@ -32,6 +32,13 @@ const Card = ({
         </h1>
         <h1 className="font-normal text-base">{jobRole}</h1>
         <h1 className="font-medium text-sm">{location}</h1>
+        <h1 className="font-medium text-base text-[#7f7f7f] my-3">
+          Estimated Salary:{" "}
+          <span>
+            {salaryCurrencyCode} {minJdSalary ?? 0} - {maxJdSalary ?? 0}
+          </span>
+          ✅
+        </h1>
         <div>
           <div className="relative">
             <p className={`${isShow ? "h-auto" : "h-40"} overflow-hidden`}>
@@ -56,12 +63,12 @@ const Card = ({
         <h1 className="font-medium text-lg text-[#8f8f8f]">
           Minimum Experience
         </h1>
-        <h1 className="font-normal text-base mb-4">{minExp} years</h1>
+        <h1 className="font-normal text-base mb-4">{minExp ?? "0"} years</h1>
 
         <h1 className="font-medium text-lg text-[#8f8f8f]">
           Maximum Experience
         </h1>
-        <h1 className="font-normal text-base mb-4">{maxExp} years</h1>
+        <h1 className="font-normal text-base mb-4">{maxExp ?? "0"} years</h1>
         <button className="w-full py-3 bg-[#55efc4] rounded-lg font-medium">
           ⚡Easy Apply
         </button>
