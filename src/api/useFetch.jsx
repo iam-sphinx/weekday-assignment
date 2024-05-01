@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const useFetch = () => {
   const [data, setData] = useState([]);
   const [offset, setOffset] = useState(0);
-  const limit = 10; 
+  const limit = 10;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,9 +24,9 @@ const useFetch = () => {
           requestOptions
         );
         const result = await response.json();
-
-        setData((prev) => {
-          return [...prev, ...result?.jdList];
+        setData((prevData) => {
+          // Concatenate the previous data with the newly fetched data
+          return [...prevData, ...result?.jdList];
         });
       } catch (error) {
         console.error(error);
